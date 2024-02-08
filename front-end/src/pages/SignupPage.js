@@ -7,6 +7,8 @@ const SignupPage = () => {
     
     const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
+    const [firstname, setFirstname] = useState('');
+    const [lastname, setLastname] = useState('');
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
     const [error, setError] = useState('');
@@ -25,6 +27,8 @@ const SignupPage = () => {
             const response = await axios.post('http://localhost:5000/api/v1/user/signup', {
                 username, 
                 email, 
+                firstname,
+                lastname,
                 password
             });
 
@@ -58,6 +62,16 @@ const SignupPage = () => {
         placeholder='Your email address'
         value={email}
         onChange={e => setEmail(e.target.value)}/>
+        <input
+        className='input-field'
+        placeholder='Your first name'
+        value={firstname}
+        onChange={e => setFirstname(e.target.value)}/>
+        <input
+        className='input-field'
+        placeholder='Your last name'
+        value={lastname}
+        onChange={e => setLastname(e.target.value)}/>
         <input 
         className='input-field'
         type="password"

@@ -18,7 +18,7 @@ const LoginPage = () => {
 
             if (response.data.status) {
                 localStorage.setItem("valid", true);
-                navigate('/employee');
+                navigate('/roomList');
             } else {
                 setError('Incorrect email or password');
               }
